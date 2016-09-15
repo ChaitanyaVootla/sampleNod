@@ -18,3 +18,13 @@ build:
   ci:
     - node --version
     - echo SHIPPABLE_POSTGRES_CMD 
+    
+integrations:
+  notifications:
+    - integrationName: "triggerPipelinesDemo"
+      type: webhook
+      payload:
+        - versionName= 1.5
+      on_success: always
+      on_failure: never
+
